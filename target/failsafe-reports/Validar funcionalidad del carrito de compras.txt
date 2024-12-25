@@ -1,34 +1,79 @@
 -------------------------------------------------------------------------------
 Test set: Validar funcionalidad del carrito de compras
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 53.572 s <<< FAILURE! - in Validar funcionalidad del carrito de compras
-Validar funcionalidad del carrito de compras #1(Validar funcionalidad del carrito de compras)  Time elapsed: 19.982 s  <<< ERROR!
-net.serenitybdd.model.exceptions.SerenityManagedException: 
-The following error occurred: An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.24'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [6a59e6bb-9ad1-44e8-b4e7-1ce1c13452fb, findElement {using=xpath, value=//android.widget.ImageView[@content-desc="App logo and name"]}]
-Capabilities {appium:app: C:/Users/andre/Downloads/qa..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:/Users/andre/Downloads/qa..., appActivity: com.saucelabs.mydemoapp.and..., appPackage: com.saucelabs.mydemoapp.and..., automationName: UIAutomator2, deviceName: emulator-5554, hub: http://192.168.74.1:4723, platformName: ANDROID, platformVersion: 13.0}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 320, appium:deviceScreenSize: 720x1280, appium:deviceUDID: emulator-5554, appium:hub: http://192.168.74.1:4723, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2, appium:platformVersion: 13, appium:statBarHeight: 48, appium:takesScreenshot: true, appium:viewportRect: {height: 1232, left: 0, top: 48, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 6a59e6bb-9ad1-44e8-b4e7-1ce1c13452fb
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 1.594 s <<< FAILURE! - in Validar funcionalidad del carrito de compras
+Validar funcionalidad del carrito de compras.Validar funcionalidad del carrito de compras #1  Time elapsed: 1.255 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at net.serenitybdd.core.pages.RenderedPageObjectView.waitFor(RenderedPageObjectView.java:110)
+	at net.serenitybdd.core.pages.PageObject.waitFor(PageObject.java:417)
+	at com.nttdata.screens.ProductosScreen.isProductDisplayed(ProductosScreen.java:19)
+	at com.nttdata.steps.ProductosStep.validarCargaApp(ProductosStep.java:17)
+	at com.nttdata.steps.ProductosStep$ByteBuddy$f3dZBiII.validarCargaApp$accessor$VRlkMFUZ(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:18)
+	at net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:18)
+	at net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:425)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at com.nttdata.steps.ProductosStep$ByteBuddy$f3dZBiII.validarCargaApp(Unknown Source)
+	at com.nttdata.stepsdefinitions.ProductoStepDefinition.estoyEnLaAplicacionDeSauceLabs(ProductoStepDefinition.java:18)
+	at ✽.estoy en la aplicación de SauceLabs(file:///C:/Users/andre/Downloads/qa-lab-mobile-automation-dec/qa-lab-mobile-automation-dec/src/test/resources/features/productos.feature:5)
 
-Validar funcionalidad del carrito de compras #2(Validar funcionalidad del carrito de compras)  Time elapsed: 18.34 s  <<< ERROR!
-net.serenitybdd.model.exceptions.SerenityManagedException: 
-The following error occurred: An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.24'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9380700f-fcdf-4531-aa0c-d1aac28df8d2, findElement {using=xpath, value=//android.widget.ImageView[@content-desc="App logo and name"]}]
-Capabilities {appium:app: C:/Users/andre/Downloads/qa..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:/Users/andre/Downloads/qa..., appActivity: com.saucelabs.mydemoapp.and..., appPackage: com.saucelabs.mydemoapp.and..., automationName: UIAutomator2, deviceName: emulator-5554, hub: http://192.168.74.1:4723, platformName: ANDROID, platformVersion: 13.0}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 320, appium:deviceScreenSize: 720x1280, appium:deviceUDID: emulator-5554, appium:hub: http://192.168.74.1:4723, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2, appium:platformVersion: 13, appium:statBarHeight: 48, appium:takesScreenshot: true, appium:viewportRect: {height: 1232, left: 0, top: 48, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9380700f-fcdf-4531-aa0c-d1aac28df8d2
+Validar funcionalidad del carrito de compras.Validar funcionalidad del carrito de compras #2  Time elapsed: 0.07 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at net.serenitybdd.core.pages.RenderedPageObjectView.waitFor(RenderedPageObjectView.java:110)
+	at net.serenitybdd.core.pages.PageObject.waitFor(PageObject.java:417)
+	at com.nttdata.screens.ProductosScreen.isProductDisplayed(ProductosScreen.java:19)
+	at com.nttdata.steps.ProductosStep.validarCargaApp(ProductosStep.java:17)
+	at com.nttdata.steps.ProductosStep$ByteBuddy$f3dZBiII.validarCargaApp$accessor$VRlkMFUZ(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:18)
+	at net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:18)
+	at net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:425)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at com.nttdata.steps.ProductosStep$ByteBuddy$f3dZBiII.validarCargaApp(Unknown Source)
+	at com.nttdata.stepsdefinitions.ProductoStepDefinition.estoyEnLaAplicacionDeSauceLabs(ProductoStepDefinition.java:18)
+	at ✽.estoy en la aplicación de SauceLabs(file:///C:/Users/andre/Downloads/qa-lab-mobile-automation-dec/qa-lab-mobile-automation-dec/src/test/resources/features/productos.feature:5)
 
-Validar funcionalidad del carrito de compras #3(Validar funcionalidad del carrito de compras)  Time elapsed: 14.695 s  <<< ERROR!
-net.serenitybdd.model.exceptions.SerenityManagedException: 
-The following error occurred: An unknown server-side error occurred while processing the command. Original error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running (probably crashed). Check the server log and/or the logcat output for more details
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.24'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [205a94af-d3b2-4a9b-9a29-11e5b092538b, findElement {using=xpath, value=//android.widget.ImageView[@content-desc="App logo and name"]}]
-Capabilities {appium:app: C:/Users/andre/Downloads/qa..., appium:appActivity: com.saucelabs.mydemoapp.and..., appium:appPackage: com.saucelabs.mydemoapp.and..., appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:/Users/andre/Downloads/qa..., appActivity: com.saucelabs.mydemoapp.and..., appPackage: com.saucelabs.mydemoapp.and..., automationName: UIAutomator2, deviceName: emulator-5554, hub: http://192.168.74.1:4723, platformName: ANDROID, platformVersion: 13.0}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 320, appium:deviceScreenSize: 720x1280, appium:deviceUDID: emulator-5554, appium:hub: http://192.168.74.1:4723, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2, appium:platformVersion: 13, appium:statBarHeight: 48, appium:takesScreenshot: true, appium:viewportRect: {height: 1232, left: 0, top: 48, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 205a94af-d3b2-4a9b-9a29-11e5b092538b
+Validar funcionalidad del carrito de compras.Validar funcionalidad del carrito de compras #3  Time elapsed: 0.073 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at net.serenitybdd.core.pages.RenderedPageObjectView.waitFor(RenderedPageObjectView.java:110)
+	at net.serenitybdd.core.pages.PageObject.waitFor(PageObject.java:417)
+	at com.nttdata.screens.ProductosScreen.isProductDisplayed(ProductosScreen.java:19)
+	at com.nttdata.steps.ProductosStep.validarCargaApp(ProductosStep.java:17)
+	at com.nttdata.steps.ProductosStep$ByteBuddy$f3dZBiII.validarCargaApp$accessor$VRlkMFUZ(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:18)
+	at net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:18)
+	at net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:425)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:200)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
+	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+	at com.nttdata.steps.ProductosStep$ByteBuddy$f3dZBiII.validarCargaApp(Unknown Source)
+	at com.nttdata.stepsdefinitions.ProductoStepDefinition.estoyEnLaAplicacionDeSauceLabs(ProductoStepDefinition.java:18)
+	at ✽.estoy en la aplicación de SauceLabs(file:///C:/Users/andre/Downloads/qa-lab-mobile-automation-dec/qa-lab-mobile-automation-dec/src/test/resources/features/productos.feature:5)
 

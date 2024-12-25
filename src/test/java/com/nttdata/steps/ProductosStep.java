@@ -4,6 +4,7 @@ import com.nttdata.screens.ProductoDetalleScreen;
 import com.nttdata.screens.ProductosScreen;
 import net.serenitybdd.annotations.Step;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 
 
 public class ProductosStep {
@@ -21,12 +22,11 @@ public class ProductosStep {
     }
 
     public void seleccionarProducto(String producto) {
-        productosScreen.findProductByName(producto).click();
-    }
-
-    public void agregarUnidadesAlCarrito(int unidades) {
-        productoDetalleScreen.incrementarCantidad(unidades);
-        productoDetalleScreen.agregarAlCarrito();
+        try {
+            productosScreen.findProductByName(producto).click();
+        } catch (NoSuchElementException e) {
+            Assert.fail("El producto '" + producto + "' no se encontró en la galería: " + e.getMessage());
+        }
     }
 
     public void validarCarritoActualizado() {
@@ -37,7 +37,12 @@ public class ProductosStep {
                 cantidadActual);
     }
     public void agregarProductoAlCarrito(int cantidad) {
-        productoDetalleScreen.incrementarCantidad(cantidad);
-        productoDetalleScreen.agregarAlCarrito();
+        try {
+            productoDetalleScreen.vaciarCarrito();
+            productoDetalleScreen.incrementarCantidad(cantidad);
+            productoDetalleScreen.agregarAlCarrito();
+        } catch (Exception e) {
+            Assert.fail("Error al agregar producto al carrito: " + e.getMessage());
+        }
     }
 }
